@@ -58,25 +58,25 @@ public class DocumentUtils {
 
     public static void checkForAbcSequence(String documentNumber) {
         if (documentNumber.toLowerCase().contains("abc")) {
-            System.out.println("Номер документа содержит последовательность 'abc'");
+            System.out.println("Document number involves this sequence: 'abc'");
         } else {
-            System.out.println("Номер документа не содержит последовательность 'abc'");
+            System.out.println("Document number doesn`t involve this sequence: 'abc'");
         }
     }
 
     public static void checkStartsWithSequence(String documentNumber) {
         if (documentNumber.startsWith("555")) {
-            System.out.println("Номер документа начинается с последовательности '555'");
+            System.out.println("Document number starts with '555'");
         } else {
-            System.out.println("Номер документа не начинается с последовательности '555'");
+            System.out.println("Document number doesn`t start with '555'");
         }
     }
 
     public static void checkEndsWithSequence(String documentNumber) {
         if (documentNumber.endsWith("1a2b")) {
-            System.out.println("Номер документа заканчивается на последовательность '1a2b'");
+            System.out.println("Document number ends with '1a2b'");
         } else {
-            System.out.println("Номер документа не заканчивается на последовательность '1a2b'");
+            System.out.println("Document number doesn`t end with '1a2b'");
         }
     }
 
