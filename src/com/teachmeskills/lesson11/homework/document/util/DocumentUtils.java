@@ -23,37 +23,26 @@ public class DocumentUtils {
     }
 
     public static void extractLowercaseLetters(String documentNumber) {
-        String[] parts = documentNumber.split("-");
-        StringBuilder lowResult = new StringBuilder();
-
-        for (String part : parts) {
-            for (char c : part.toCharArray()) {
-                if (Character.isLetter(c)) {
-                    lowResult.append(Character.toLowerCase(c));
-                }
-            }
-            lowResult.append("/");
+        String[] block = documentNumber.toLowerCase().split("-");
+        for (int i = 1; i < block.length; i=i+2){
+            System.out.print(block[i]+"/");
         }
-
-        lowResult.deleteCharAt(lowResult.length() - 1);
-        System.out.println(lowResult);
+        System.out.println(documentNumber.toLowerCase().charAt(19)+"/"+documentNumber.toLowerCase().charAt(21));
     }
 
     public static void extractUppercaseLetters(String documentNumber) {
-        String[] parts = documentNumber.split("-");
-        StringBuilder upResult = new StringBuilder("Letters:");
 
-        for (String part : parts) {
-            for (char c : part.toCharArray()) {
-                if (Character.isLetter(c)) {
-                    upResult.append(Character.toUpperCase(c));
-                }
-            }
-            upResult.append("/");
+        StringBuilder result = new StringBuilder("Letters: ");
+        String[] block = documentNumber.toUpperCase().split("-");
+
+        for (int i = 1; i < block.length; i = i + 2) {
+            result.append(block[i]).append("/");
         }
 
-        upResult.deleteCharAt(upResult.length() - 1);
-        System.out.println(upResult);
+        result.append(documentNumber.toUpperCase().charAt(19)).append("/")
+                .append(documentNumber.toUpperCase().charAt(21));
+
+        System.out.println(result);
     }
 
     public static void checkForAbcSequence(String documentNumber) {
